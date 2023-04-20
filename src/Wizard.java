@@ -7,6 +7,7 @@ public class Wizard extends Card{
         def = 2;
         acc = 5;
         lvl = 1;
+        spd = 2;
         name = "WIZARD";
     }
 }
