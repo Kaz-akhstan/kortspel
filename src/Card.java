@@ -4,6 +4,7 @@ public abstract class Card {
     int maxDmg;
     int def;
     int acc;
+    int lvl;
     String name;
 
     public String playAgainst(Card other)

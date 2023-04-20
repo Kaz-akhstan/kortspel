@@ -6,6 +6,7 @@ public class Knight extends Card {
         minDmg = 2;
         def = 5;
         acc = 5;
+        lvl = 1;
         name = "KNIGHT";
     }
 }
