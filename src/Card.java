@@ -2,6 +2,7 @@ import java.util.Random;
 
 public abstract class Card {
     int health;
+
     int minDmg;
     int maxDmg;
     int def;
@@ -13,16 +14,21 @@ public abstract class Card {
     public String playAgainst(Card other)
     {
         Random rn = new Random();
-
-        if(spd > other.spd)
+        int dmg = rn.nextInt(maxDmg-minDmg + 1) + minDmg;
+        if(rn.nextInt(10) >= other.def && acc >= rn.nextInt(10))
         {
-            other.health -= rn.nextInt(maxDmg-minDmg) + minDmg;
+            other.setHealth(other.health - dmg);
+            System.out.println("Dealt " + dmg + " damage!");
         }
-
-        if(other.health == health)
+        if(other.health < 1)
         {
-            return "Victory";
+            lvl++;
+            return other.name + " took " + dmg + " damage! " + name + " has won!";
         }
-        return "";
+        return other.name + " took " + dmg + " damage!";
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 }

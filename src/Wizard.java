@@ -1,7 +1,7 @@
 public class Wizard extends Card{
     public Wizard()
     {
-        health = 8;
+        health = 16;
         maxDmg = 8;
         minDmg = 1;
         def = 2;
